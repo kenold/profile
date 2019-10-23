@@ -10,6 +10,9 @@ body {
     color: #eee;
     padding-top: 2rem;
 }
+a {
+    color: $accent;
+}
 .person {
     background-color: #0E0E0E;
     display: grid;
@@ -21,7 +24,7 @@ body {
     padding: 0 1rem;
     &__photo {
         img {
-            width: 250px;
+            max-width: 250px;
         }
     }
     &__name {
@@ -48,7 +51,7 @@ body {
         .link__item {
             margin-left: 1rem;
             svg {
-                fill: #eee;
+                fill: $accent;
             }
         }
     }
@@ -63,24 +66,26 @@ body {
     }
     .person {
         grid-template-columns: auto minmax(min-content, 300px) 1fr auto;
-        grid-template-rows: repeat(3,auto) 35px;
+        grid-template-rows: repeat(3,auto) 30px;
         grid-column-gap: 3.5rem;
         text-align: left;
         max-width: 800px;
-        padding: 1rem 0 0;
+        padding: 2rem 0 0;
         &__photo {
             grid-column: 2/3;
             grid-row: 1/5;
             box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
             z-index: 2;
             img {
-                width: 100%;
-                height: 100%;
+                max-width: 300px;
             }
         }
         &__header {
             grid-column: 3/4;
             grid-row: 1/2;
+        }
+        &__name {
+            font-size: 3rem;
         }
         &__main {
             grid-column: 3/4;
@@ -90,11 +95,15 @@ body {
             grid-column: 3/4;
             grid-row: 3/4;
             padding-bottom: 0;
+            .links__list {
+                justify-content: flex-start;
+            }
         }
-    }
-    .blank {
-        grid-column: 1/5;
-        grid-row: 4/5;
-        background-color: $body-bg;
+        .blank {
+            grid-column: 1/5;
+            grid-row: 4/5;
+            display: block;
+            background-color: $body-bg;
+        }
     }
 }
