@@ -6,15 +6,25 @@ html {
 }
 body {
     font-family: Roboto, -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
-    background-color: #0E0E0E;
+    background-color: #eee;
     color: #eee;
 }
 .person {
+    background-color: #0E0E0E;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "photo"
+        "header"
+        "main"
+        "footer";
     margin: 0 auto;
     padding: 1em;
     max-width: 600px;
     text-align: center;
     &__photo {
+        grid-area: photo;
         img {
             height: 300px;
         }
@@ -24,7 +34,11 @@ body {
         padding-bottom: .5rem;
     }
     &__header {
+        grid-area: header;
         padding: 1rem 0;
+    }
+    &__main {
+        grid-area: main;
     }
     &__title {
         font-size: 1.125rem;
@@ -33,6 +47,7 @@ body {
         @include font-size;
     }
     &__footer {
+        grid-area: footer;
         padding: 2rem 0 1rem;
         .links__list {
             display: flex;
@@ -44,5 +59,17 @@ body {
                 fill: #eee;
             }
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .person {
+        grid-template-columns: 1fr minmax(auto, 400px), 1fr, 1fr;
+        grid-template-rows: auto 1fr 1fr 50px;
+        grid-template-areas:
+            ". photo header ."
+            ". photo main ."
+            ". photo footer ."
+            ". photo . .";
     }
 }
