@@ -6,39 +6,31 @@ html {
 }
 body {
     font-family: Roboto, -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
-    background-color: #eee;
+    background-color: #0E0E0E;
     color: #eee;
+    padding-top: 2rem;
 }
 .person {
     background-color: #0E0E0E;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas:
-        "photo"
-        "header"
-        "main"
-        "footer";
+    grid-gap: 1rem;
     margin: 0 auto;
-    padding: 1em;
-    max-width: 600px;
     text-align: center;
+    padding: 0 1rem;
     &__photo {
-        grid-area: photo;
         img {
-            height: 300px;
+            width: 250px;
         }
     }
     &__name {
         font-size: 2rem;
+        font-weight: 700;
         padding-bottom: .5rem;
     }
     &__header {
-        grid-area: header;
         padding: 1rem 0;
-    }
-    &__main {
-        grid-area: main;
     }
     &__title {
         font-size: 1.125rem;
@@ -47,29 +39,62 @@ body {
         @include font-size;
     }
     &__footer {
-        grid-area: footer;
         padding: 2rem 0 1rem;
         .links__list {
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: center;
         }
         .link__item {
+            margin-left: 1rem;
             svg {
                 fill: #eee;
             }
         }
     }
+    .blank {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
+    body {
+        background-color: $body-bg;
+    }
     .person {
-        grid-template-columns: 1fr minmax(auto, 400px), 1fr, 1fr;
-        grid-template-rows: auto 1fr 1fr 50px;
-        grid-template-areas:
-            ". photo header ."
-            ". photo main ."
-            ". photo footer ."
-            ". photo . .";
+        grid-template-columns: auto minmax(min-content, 300px) 1fr auto;
+        grid-template-rows: repeat(3,auto) 35px;
+        grid-column-gap: 3.5rem;
+        text-align: left;
+        max-width: 800px;
+        padding: 1rem 0 0;
+        &__photo {
+            grid-column: 2/3;
+            grid-row: 1/5;
+            box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+            z-index: 2;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__header {
+            grid-column: 3/4;
+            grid-row: 1/2;
+        }
+        &__main {
+            grid-column: 3/4;
+            grid-row: 2/3;
+        }
+        &__footer {
+            grid-column: 3/4;
+            grid-row: 3/4;
+            padding-bottom: 0;
+        }
+    }
+    .blank {
+        grid-column: 1/5;
+        grid-row: 4/5;
+        background-color: $body-bg;
     }
 }

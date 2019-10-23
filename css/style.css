@@ -3,31 +3,27 @@ html {
 
 body {
   font-family: Roboto, -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
-  background-color: #eee;
-  color: #eee; }
+  background-color: #0E0E0E;
+  color: #eee;
+  padding-top: 2rem; }
 
 .person {
   background-color: #0E0E0E;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "photo" "header" "main" "footer";
+  grid-gap: 1rem;
   margin: 0 auto;
-  padding: 1em;
-  max-width: 600px;
-  text-align: center; }
-  .person__photo {
-    grid-area: photo; }
-    .person__photo img {
-      height: 300px; }
+  text-align: center;
+  padding: 0 1rem; }
+  .person__photo img {
+    height: 300px; }
   .person__name {
     font-size: 2rem;
+    font-weight: 700;
     padding-bottom: .5rem; }
   .person__header {
-    grid-area: header;
     padding: 1rem 0; }
-  .person__main {
-    grid-area: main; }
   .person__title {
     font-size: 1.125rem; }
   .person__bio {
@@ -36,17 +32,47 @@ body {
     font-size: 1rem;
     line-height: 1.5rem; }
   .person__footer {
-    grid-area: footer;
     padding: 2rem 0 1rem; }
     .person__footer .links__list {
       display: flex;
       align-items: center;
-      justify-content: space-around; }
-    .person__footer .link__item svg {
-      fill: #eee; }
+      justify-content: center; }
+    .person__footer .link__item {
+      margin-left: 1rem; }
+      .person__footer .link__item svg {
+        fill: #eee; }
+  .person .blank {
+    display: none; }
 
 @media (min-width: 768px) {
+  body {
+    background-color: #40444c; }
   .person {
-    grid-template-columns: 1fr minmax(auto, 400px), 1fr, 1fr;
-    grid-template-rows: auto 1fr 1fr 50px;
-    grid-template-areas: ". photo header ." ". photo main ." ". photo footer ." ". photo . ."; } }
+    grid-template-columns: auto minmax(min-content, 300px) 1fr auto;
+    grid-template-rows: repeat(3, auto) 35px;
+    grid-column-gap: 3.5rem;
+    text-align: left;
+    max-width: 800px;
+    padding: 1rem 0 0; }
+    .person__photo {
+      grid-column: 2/3;
+      grid-row: 1/5;
+      box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
+      z-index: 2; }
+      .person__photo img {
+        width: 100%;
+        height: 100%; }
+    .person__header {
+      grid-column: 3/4;
+      grid-row: 1/2; }
+    .person__main {
+      grid-column: 3/4;
+      grid-row: 2/3; }
+    .person__footer {
+      grid-column: 3/4;
+      grid-row: 3/4;
+      padding-bottom: 0; }
+  .blank {
+    grid-column: 1/5;
+    grid-row: 4/5;
+    background-color: #40444c; } }
