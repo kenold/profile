@@ -1,11 +1,48 @@
 @import './variables';
 @import './mixins';
 
+html {
+    font-size: 16px;
+}
 body {
     font-family: Roboto, -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
+    background-color: #0E0E0E;
+    color: #eee;
 }
-.container {
+.person {
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 1em;
     max-width: 600px;
+    text-align: center;
+    &__photo {
+        img {
+            height: 300px;
+        }
+    }
+    &__name {
+        font-size: 2rem;
+        padding-bottom: .5rem;
+    }
+    &__header {
+        padding: 1rem 0;
+    }
+    &__title {
+        font-size: 1.125rem;
+    }
+    &__bio {
+        @include font-size;
+    }
+    &__footer {
+        padding: 2rem 0 1rem;
+        .links__list {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .link__item {
+            svg {
+                fill: #eee;
+            }
+        }
+    }
 }

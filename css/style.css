@@ -1,7 +1,35 @@
-body {
-  font-family: Roboto, -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif; }
+html {
+  font-size: 16px; }
 
-.container {
+body {
+  font-family: Roboto, -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
+  background-color: #0E0E0E;
+  color: #eee; }
+
+.person {
   margin: 0 auto;
-  padding: 0 1em;
-  max-width: 600px; }
+  padding: 1em;
+  max-width: 600px;
+  text-align: center; }
+  .person__photo img {
+    height: 300px; }
+  .person__name {
+    font-size: 2rem;
+    padding-bottom: .5rem; }
+  .person__header {
+    padding: 1rem 0; }
+  .person__title {
+    font-size: 1.125rem; }
+  .person__bio {
+    font-size: 16px;
+    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem; }
+  .person__footer {
+    padding: 2rem 0 1rem; }
+    .person__footer .links__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-around; }
+    .person__footer .link__item svg {
+      fill: #eee; }
