@@ -3,9 +3,8 @@ html {
 
 body {
   font-family: Roboto, -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
-  background-color: #0E0E0E;
-  color: #eee;
-  padding-top: 2rem; }
+  background-color: #37055A;
+  color: #f3dad7; }
 
 a {
   color: #ca2c41; }
@@ -13,28 +12,41 @@ a {
 .person {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-gap: 1rem;
+  grid-template-rows: 1fr auto;
+  grid-row-gap: 1rem;
   margin: 0 auto;
-  text-align: center;
-  padding: 0 1rem; }
-  .person__photo img {
-    max-width: 250px; }
+  text-align: center; }
+  .person__photo {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index: -1; }
+    .person__photo img {
+      max-width: 100%; }
   .person__name {
     font-size: 2rem;
     font-weight: 700;
     padding-bottom: .5rem; }
   .person__header {
-    padding: 1rem 0; }
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: flex-end;
+    padding-bottom: 2rem;
+    z-index: 2; }
   .person__title {
     font-size: 1.125rem; }
+  .person__main {
+    grid-row: 2/3;
+    padding: 0 1rem; }
   .person__bio {
     font-size: 16px;
     line-height: 24px;
     font-size: 1rem;
     line-height: 1.5rem; }
   .person__footer {
-    padding: 2rem 0 1rem; }
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 2rem 0 1rem;
+    z-index: 1; }
     .person__footer .links__list {
       display: flex;
       align-items: center;
@@ -43,12 +55,21 @@ a {
       margin-left: 1rem; }
       .person__footer .link__item svg {
         fill: #ca2c41; }
-  .person .blank {
-    display: none; }
+
+.darken {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: flex-end;
+  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 3%, black 100%);
+  opacity: 0.9;
+  height: 50%;
+  width: 100%;
+  z-index: 1; }
 
 @media (min-width: 768px) {
   body {
-    background-color: #40444c; }
+    background-color: #F5EBC9;
+    padding-top: 2rem; }
   .person {
     grid-template-columns: auto minmax(min-content, 300px) 1fr auto;
     grid-template-rows: 30px repeat(3, auto) 10px;
@@ -70,7 +91,8 @@ a {
       font-size: 3rem; }
     .person__main {
       grid-column: 3/4;
-      grid-row: 3/4; }
+      grid-row: 3/4;
+      padding: 0; }
     .person__footer {
       grid-column: 3/4;
       grid-row: 4/5;
@@ -78,7 +100,7 @@ a {
       .person__footer .links__list {
         justify-content: flex-start; }
     .person .background {
-      background-color: #0E0E0E;
+      background-color: #37055A;
       grid-column: 1/5;
       grid-row: 1/5;
       z-index: -5; } }
