@@ -58,11 +58,12 @@ a {
         z-index: 1;
         .links__list {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            text-align: left;
         }
         .link__item {
-            margin-left: 1rem;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
             svg {
                 fill: $accent;
             }
@@ -120,6 +121,11 @@ a {
             padding-bottom: 0;
             .links__list {
                 justify-content: flex-start;
+                flex-direction: row;
+                .link__item {
+                    padding-left: 0;
+                    padding-right: 1rem;
+                }
             }
         }
         .background {

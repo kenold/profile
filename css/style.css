@@ -50,10 +50,11 @@ a {
     z-index: 1; }
     .person__footer .links__list {
       display: flex;
-      align-items: center;
-      justify-content: center; }
+      flex-direction: column;
+      text-align: left; }
     .person__footer .link__item {
-      margin-left: 1rem; }
+      padding-left: 1rem;
+      margin-bottom: 1rem; }
       .person__footer .link__item svg {
         fill: #ffd5c2; }
 
@@ -99,7 +100,11 @@ a {
       grid-row: 4/5;
       padding-bottom: 0; }
       .person__footer .links__list {
-        justify-content: flex-start; }
+        justify-content: flex-start;
+        flex-direction: row; }
+        .person__footer .links__list .link__item {
+          padding-left: 0;
+          padding-right: 1rem; }
     .person .background {
       background-color: #588b8b;
       grid-column: 1/5;
