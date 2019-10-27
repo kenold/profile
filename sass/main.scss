@@ -8,6 +8,7 @@ body {
     font-family: Roboto, -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
     background-color: $profile-bg;
     color: $text-color;
+    height: 80vh;
 }
 a {
     color: $accent;
@@ -19,7 +20,7 @@ a {
     grid-row-gap: 1rem;
     margin: 0 auto;
     text-align: center;
-    height: 100vh;
+    // height: 100vh;
     &__photo {
         grid-column: 1/2;
         grid-row: 1/2;
@@ -74,7 +75,7 @@ a {
     align-self: flex-end;
     //background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 3%, rgb(0, 0, 0) 100%);
     //opacity: 0.9;
-    background: linear-gradient(to top, rgba(55,5,90,1) 0%,rgba(125,185,232,0) 100%);
+    background: linear-gradient(to top, rgba(88, 139, 139, 1) 0%,rgba(125,185,232,0) 100%);
     height: 50%;
     width: 100%;
     z-index: 1;
@@ -106,6 +107,7 @@ a {
         }
         &__name {
             font-size: 3rem;
+            color: $accent;
         }
         &__main {
             grid-column: 3/4;
